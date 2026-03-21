@@ -65,3 +65,24 @@ Para que isso funcione em múltiplos ambientes de forma agnóstica, o serviço c
 > **Conclusão Agêntica:** "Redesenhar o fluxo para processamento em batch (Perf) e aplicar o Princípio de Privilégio Mínimo na conexão (Sec)."
 
 ---
+
+## Diagrama de Overview da Arquitetura
+
+```mermaid
+graph TD
+    A[Ambientes: Dev, Test, Prod] --> B[Data Exporter]
+    B --> C[Azure Log Analytics / Event Hub]
+    C --> D[Orquestrador]
+    D --> E[Agente de Eficiência de Código<br/>Phi-3.5-mini]
+    D --> F[Agente de Segurança e Privacidade<br/>Phi-3.5-mini]
+    D --> G[Agente de Débito Técnico<br/>Phi-3.5-mini]
+    E --> H[Diagnóstico de Performance]
+    F --> I[Diagnóstico de Segurança]
+    G --> J[Diagnóstico de Manutenibilidade]
+    H --> K[Supervisor / Consenso]
+    I --> K
+    J --> K
+    K --> L[Relatório de Saúde / Auto-fix<br/>via PAC CLI / GitHub Actions]
+```
+
+---
