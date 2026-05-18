@@ -1,0 +1,12 @@
+beautifulsoup4 
+faiss-cpu 
+fastapi 
+fastmcp 
+networkx 
+numpy 
+onnxruntime-genai 
+pydantic 
+python-multipart 
+semantic-kernel 
+sentence-transformers 
+tqdm

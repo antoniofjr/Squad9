@@ -1,0 +1,4 @@
+operation,duration,success
+Sync_Vendas,8000,True
+Flow_Clientes,2000,True
+Flow_Pagamentos,7000,False
