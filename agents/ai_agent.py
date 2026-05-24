@@ -1,44 +1,27 @@
-import requests
-import pandas as pd
+from agents.phi_agent import ask_phi
 
-API_URL = "http://localhost:11434/api/generate"
-
-def analyze_with_ai(file_path):
+def analyze_with_ai(data):
 
     try:
-        df = pd.read_csv(file_path)
-
-        # 🔹 limitar tamanho (importante!)
-        sample = df.head(20).to_string()
 
         prompt = f"""
-        Você é um especialista em análise de logs.
+Você é um especialista em análise de logs.
 
-        Analise os dados abaixo:
+Analise os dados abaixo:
 
-        {sample}
+{data}
 
-        Identifique:
-        - Problemas
-        - Possíveis erros
-        - Sugestões de melhoria
+Identifique:
+- Problemas
+- Possíveis erros
+- Sugestões de melhoria
 
-        Seja direto.
-        """
+Seja direto.
+"""
 
-        response = requests.post(
-            API_URL,
-            json={
-                "model": "phi3",
-                "prompt": prompt,
-                "stream": False
-            },
-            timeout=30
-        )
+        result = ask_phi(prompt)
 
-        result = response.json()
-
-        return result.get("response", "Erro ao analisar")
+        return result
 
     except Exception as e:
         return f"Erro: {str(e)}"

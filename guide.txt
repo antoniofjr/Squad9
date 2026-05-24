@@ -1,15 +1,5 @@
-
-
-vá ao terminal do projeto e comece
-
-
-
 #instalar Requirements
 Step 1 - pip install -r requirements.txt
-
-
-#baixar o Modelo phi-3.5 mini
-python download_phi35_model.py
 
 #Rodar o projeto
 Step 2 - 
@@ -23,7 +13,5 @@ GET /analyze
 
 
 #Escolher TryOut e Selecionar o Diretorio do arquivo desejado
-
-#Exemplo
 C:\caminho\aiops-power-platform\data\logs.csv
 
