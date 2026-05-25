@@ -2,12 +2,43 @@ def analyze_performance(df):
 
     issues = []
 
-    for _, row in df.iterrows():
+    # junta todas as colunas em texto
+    full_text = df.fillna("").astype(str).apply(
+    lambda row: " ".join(row.values),
+    axis=1
+    )
 
-        if row["duration"] > 5000:
-            issues.append(f"{row['operation']} está lento")
+    # palavras críticas
+    critical_keywords = [
+        "error",
+        "exception",
+        "failed",
+        "failure",
+        "critical",
+        "timeout",
+        "unauthorized",
+        "forbidden",
+        "invalid",
+        "crash"
+    ]
 
-        if row["success"] == False:
-            issues.append(f"{row['operation']} falhou")
+    for line in full_text:
+
+        lower_line = line.lower()
+
+        for keyword in critical_keywords:
+
+            if keyword in lower_line:
+
+                issues.append(
+                    f"Possível problema encontrado: {line[:200]}"
+                )
+
+                break
+
+    # caso nenhum problema seja encontrado
+    if not issues:
+
+        issues.append("Nenhum problema crítico encontrado")
 
     return issues

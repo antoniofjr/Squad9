@@ -11,7 +11,7 @@ def ask_phi(prompt):
 
     params = og.GeneratorParams(model)
     params.set_search_options(
-        max_length=200,
+        max_length=512,
         temperature=0.7
     )
 

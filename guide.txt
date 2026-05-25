@@ -1,8 +1,11 @@
 #instalar Requirements
 Step 1 - pip install -r requirements.txt
 
+#baixar o Modelo de IA
+Step 2 - python download_phi35_model.py
+
 #Rodar o projeto
-Step 2 - 
+Step 3 - 
 uvicorn main:app --reload
 
 #Acessar FastApi
@@ -15,3 +18,9 @@ GET /analyze
 #Escolher TryOut e Selecionar o Diretorio do arquivo desejado
 C:\caminho\aiops-power-platform\data\logs.csv
 
+
+#se quiser testar exemplo a parte do POST /analyze-custom use estes parâmetros em json.
+{
+  "text": "Analise falhas críticas",
+  "file_path": "C:\\Users\\nnild\\Desktop\\aiops-power-platform\\data\\logsErro.xml"
+}

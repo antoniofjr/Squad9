@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerPlatformErrorLog>
+    <Timestamp>2026-05-25T14:32:18Z</Timestamp>
+    <Environment>
+        <Name>DEV-Projects</Name>
+        <Region>Brazil South</Region>
+        <EnvironmentId>c8f3a7c2-4f11-48be-a991-12ac88f6d122</EnvironmentId>
+    </Environment>
+
+    <Application>
+        <Name>ProjectManagementApp</Name>
+        <Type>CanvasApp</Type>
+        <Version>2.4.1</Version>
+    </Application>
+
+    <Flow>
+        <FlowName>Create_Project_Workflow</FlowName>
+        <FlowId>flow-98fd12ab-3321-41a0-bf91-77fda912be11</FlowId>
+        <Trigger>When_a_new_project_is_created</Trigger>
+    </Flow>
+
+    <Error>
+        <Code>ConnectorAuthorizationFailed</Code>
+        <Message>
+            Failed to authenticate connection for SharePoint connector.
+        </Message>
+
+        <Details>
+            The access token has expired or is invalid.
+        </Details>
+
+        <HttpStatusCode>401</HttpStatusCode>
+
+        <Connector>
+            <Name>SharePoint Online</Name>
+            <Operation>CreateFile</Operation>
+        </Connector>
+
+        <RequestId>7c6d0f20-22ba-4f63-8b77-01df1acfe991</RequestId>
+        <CorrelationId>89fa11ab-b5cc-46dd-a1c0-66f88bc2d6af</CorrelationId>
+
+        <StackTrace>
+            at Microsoft.PowerPlatform.Connectors.SharePoint.Execute()
+            at Microsoft.PowerAutomate.Runtime.FlowRunner.Run()
+            at Microsoft.PowerPlatform.Core.ExecutionPipeline.Process()
+        </StackTrace>
+    </Error>
+
+    <SystemInfo>
+        <ExecutedBy>admin@empresa.com</ExecutedBy>
+        <TenantId>93f8cb91-d123-4e6a-a1f3-9caa77f32e11</TenantId>
+        <ExecutionTimeMs>4217</ExecutionTimeMs>
+    </SystemInfo>
+</PowerPlatformErrorLog>
