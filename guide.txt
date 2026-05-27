@@ -9,7 +9,17 @@ então, copie o modelo de ia "model.onnx.data" para a phi3.5-mini-instruct-onnx
 
 #Rodar o projeto
 Step 3 - 
-uvicorn main:app --reload
+python -m uvicorn main:app
+
+OBS: Caso ocorra algum problema, provavelmente com a versão mudando talvez precise trocar 
+
+params.input_ids = tokens
+generator.compute_logits() 
+
+para 
+
+generator.append_tokens(tokens)
+generator.generate_next_token()
 
 #Acessar FastApi
 http://127.0.0.1:8000/docs
