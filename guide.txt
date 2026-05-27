@@ -4,6 +4,9 @@ Step 1 - pip install -r requirements.txt
 #baixar o Modelo de IA
 Step 2 - python download_phi35_model.py
 
+OBS: dependendo da versão o nome da pasta dentro de "models" pode mudar. 
+então, copie o modelo de ia "model.onnx.data" para a phi3.5-mini-instruct-onnx
+
 #Rodar o projeto
 Step 3 - 
 uvicorn main:app --reload
