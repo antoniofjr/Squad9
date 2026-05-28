@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml>
+  <SolutionManifest>
+    <UniqueName>contoso_sales_s1</UniqueName>
+    <Version>1.0.0.1</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>contoso</UniqueName>
+      <CustomizationPrefix>new</CustomizationPrefix>
+    </Publisher>
+  </SolutionManifest>
+  <RootComponents>
+    <RootComponent type="61" schemaName="new_quote_form" />
+    <RootComponent type="29" schemaName="flow_QuoteSync" />
+    <RootComponent type="90" schemaName="contoso.SalesPlugins" />
+    <RootComponent type="1" schemaName="quote" />
+    <RootComponent type="1" schemaName="opportunity" />
+  </RootComponents>
+  <WebResources>
+    <WebResource>
+      <Name>new_quote_form.js</Name>
+      <DisplayName>Quote Form Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+    <WebResource>
+      <Name>new_ribbon_quote.js</Name>
+      <DisplayName>Quote Ribbon Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+  </WebResources>
+  <Workflows>
+    <Workflow>
+      <Name>flow_QuoteSync</Name>
+      <Category>5</Category>
+      <PrimaryEntity>quote</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+    <Workflow>
+      <Name>flow_QuoteApproval</Name>
+      <Category>5</Category>
+      <PrimaryEntity>quote</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+  </Workflows>
+  <PluginAssemblies>
+    <PluginAssembly>
+      <Name>contoso.SalesPlugins</Name>
+      <Version>1.0.0.1</Version>
+      <PluginTypes>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.PreValidateQuote</TypeName>
+          <Steps>
+            <Step MessageName="Create" PrimaryEntityName="quote" Stage="20" Mode="0" />
+          </Steps>
+        </PluginType>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.PostCreateQuote</TypeName>
+          <Steps>
+            <Step MessageName="Create" PrimaryEntityName="quote" Stage="40" Mode="0" />
+          </Steps>
+        </PluginType>
+      </PluginTypes>
+    </PluginAssembly>
+  </PluginAssemblies>
+  <Entities>
+    <Entity Name="quote" DisplayName="Quote">
+      <Forms>
+        <Form Name="quote.main.form" Type="Main" />
+      </Forms>
+    </Entity>
+    <Entity Name="opportunity" DisplayName="Opportunity">
+      <Forms>
+        <Form Name="opportunity.quick.create" Type="QuickCreate" />
+      </Forms>
+    </Entity>
+  </Entities>
+</ImportExportXml>

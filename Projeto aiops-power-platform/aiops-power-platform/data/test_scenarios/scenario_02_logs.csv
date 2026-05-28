@@ -1,0 +1,13 @@
+timestamp,environment,component_type,component_name,operation,duration,success,severity,message,correlation_id
+2026-05-27T11:10:05Z,TEST,plugin,contoso.SalesPlugins.PostUpdateOpportunity,Plugin_PostUpdateOpportunity,6890,True,Warning,Post-operation plugin high latency,CORR-S2-001
+2026-05-27T11:10:21Z,TEST,entity_form,opportunity.main.form,Form_Load_OpportunityMain,2430,True,Info,Main form loaded,CORR-S2-002
+2026-05-27T11:10:41Z,TEST,cloud_flow,flow_OpportunityForecast,Flow_CalculateForecast,7770,True,Warning,Forecast action chain is long,CORR-S2-003
+2026-05-27T11:10:56Z,TEST,javascript,new_opportunity_form.js,JS_OnSave_Opportunity,6350,False,Error,Unhandled promise rejection,CORR-S2-004
+2026-05-27T11:11:14Z,TEST,entity_form,lead.main.form,Form_Validate_LeadMain,1680,True,Info,Lead validation completed,CORR-S2-005
+2026-05-27T11:11:35Z,TEST,plugin,contoso.SalesPlugins.PreCreateLead,Plugin_PreCreateLead,5210,True,Warning,Plugin does duplicate checks,CORR-S2-006
+2026-05-27T11:11:49Z,TEST,javascript,new_lead_ribbon.js,JS_Command_QualifyLead,2840,True,Info,Ribbon command completed,CORR-S2-007
+2026-05-27T11:12:05Z,TEST,cloud_flow,flow_LeadQualification,Flow_QualifyLead,10920,False,Error,Flow failed on Dataverse update,CORR-S2-008
+2026-05-27T11:12:18Z,TEST,plugin,contoso.SalesPlugins.AsyncSyncContact,Plugin_AsyncSyncContact,4520,True,Info,Async sync queued,CORR-S2-009
+2026-05-27T11:12:36Z,TEST,entity_form,contact.quick.create,Form_Save_ContactQuick,2060,True,Info,Quick create completed,CORR-S2-010
+2026-05-27T11:12:55Z,TEST,cloud_flow,flow_DailyPipelineDigest,Flow_SendDigest,5850,True,Warning,Email connector retry,CORR-S2-011
+2026-05-27T11:13:10Z,TEST,javascript,new_contact_form.js,JS_OnLoad_ContactForm,1980,True,Info,Contact script initialized,CORR-S2-012

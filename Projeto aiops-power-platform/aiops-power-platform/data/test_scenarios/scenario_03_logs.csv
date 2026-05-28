@@ -1,0 +1,13 @@
+timestamp,environment,component_type,component_name,operation,duration,success,severity,message,correlation_id
+2026-05-27T14:20:07Z,QA,entity_form,account.main.form,Form_Load_AccountMain,3150,True,Info,Account form rendered,CORR-S3-001
+2026-05-27T14:20:26Z,QA,javascript,new_account_form.js,JS_OnChange_RevenueBand,5420,True,Warning,Heavy lookup on change event,CORR-S3-002
+2026-05-27T14:20:44Z,QA,cloud_flow,flow_AccountTerritorySync,Flow_SyncTerritory,9320,False,Error,Flow exceeded API limits,CORR-S3-003
+2026-05-27T14:20:59Z,QA,plugin,contoso.SalesPlugins.PreAssignTerritory,Plugin_PreAssignTerritory,6230,True,Warning,Territory reassignment expensive,CORR-S3-004
+2026-05-27T14:21:17Z,QA,cloud_flow,flow_CaseEscalation,Flow_CheckSLA,4640,True,Info,SLA check successful,CORR-S3-005
+2026-05-27T14:21:33Z,QA,entity_form,case.main.form,Form_Save_CaseMain,2550,True,Info,Case form save done,CORR-S3-006
+2026-05-27T14:21:48Z,QA,plugin,contoso.SalesPlugins.PostCreateCase,Plugin_PostCreateCase,7110,False,Error,Plugin failed on external call,CORR-S3-007
+2026-05-27T14:22:10Z,QA,javascript,new_case_form.js,JS_OnLoad_CaseForm,1740,True,Info,Case JS loaded,CORR-S3-008
+2026-05-27T14:22:29Z,QA,entity_form,opportunity.main.form,Form_Load_OpportunityMain,2280,True,Info,Opportunity form loaded,CORR-S3-009
+2026-05-27T14:22:50Z,QA,cloud_flow,flow_OpportunityCloseTasks,Flow_CloseTasks,6830,True,Warning,Close tasks has long branch,CORR-S3-010
+2026-05-27T14:23:09Z,QA,javascript,new_opportunity_forecast.js,JS_Command_RecalcForecast,5890,True,Warning,Forecast script near timeout,CORR-S3-011
+2026-05-27T14:23:27Z,QA,plugin,contoso.SalesPlugins.AsyncOpportunityScoring,Plugin_AsyncOpportunityScoring,3470,True,Info,Async scoring completed,CORR-S3-012

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml>
+  <SolutionManifest>
+    <UniqueName>contoso_sales_s2</UniqueName>
+    <Version>1.0.0.2</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>contoso</UniqueName>
+      <CustomizationPrefix>new</CustomizationPrefix>
+    </Publisher>
+  </SolutionManifest>
+  <RootComponents>
+    <RootComponent type="90" schemaName="contoso.SalesPlugins" />
+    <RootComponent type="1" schemaName="opportunity" />
+    <RootComponent type="29" schemaName="flow_OpportunityForecast" />
+    <RootComponent type="61" schemaName="new_opportunity_form" />
+    <RootComponent type="1" schemaName="lead" />
+  </RootComponents>
+  <WebResources>
+    <WebResource>
+      <Name>new_opportunity_form.js</Name>
+      <DisplayName>Opportunity Form Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+    <WebResource>
+      <Name>new_lead_ribbon.js</Name>
+      <DisplayName>Lead Ribbon Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+    <WebResource>
+      <Name>new_contact_form.js</Name>
+      <DisplayName>Contact Form Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+  </WebResources>
+  <Workflows>
+    <Workflow>
+      <Name>flow_OpportunityForecast</Name>
+      <Category>5</Category>
+      <PrimaryEntity>opportunity</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+    <Workflow>
+      <Name>flow_LeadQualification</Name>
+      <Category>5</Category>
+      <PrimaryEntity>lead</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+    <Workflow>
+      <Name>flow_DailyPipelineDigest</Name>
+      <Category>5</Category>
+      <PrimaryEntity>opportunity</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+  </Workflows>
+  <PluginAssemblies>
+    <PluginAssembly>
+      <Name>contoso.SalesPlugins</Name>
+      <Version>1.0.0.2</Version>
+      <PluginTypes>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.PostUpdateOpportunity</TypeName>
+          <Steps>
+            <Step MessageName="Update" PrimaryEntityName="opportunity" Stage="40" Mode="0" />
+          </Steps>
+        </PluginType>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.PreCreateLead</TypeName>
+          <Steps>
+            <Step MessageName="Create" PrimaryEntityName="lead" Stage="20" Mode="0" />
+          </Steps>
+        </PluginType>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.AsyncSyncContact</TypeName>
+          <Steps>
+            <Step MessageName="Create" PrimaryEntityName="contact" Stage="40" Mode="1" />
+          </Steps>
+        </PluginType>
+      </PluginTypes>
+    </PluginAssembly>
+  </PluginAssemblies>
+  <Entities>
+    <Entity Name="opportunity" DisplayName="Opportunity">
+      <Forms>
+        <Form Name="opportunity.main.form" Type="Main" />
+      </Forms>
+    </Entity>
+    <Entity Name="lead" DisplayName="Lead">
+      <Forms>
+        <Form Name="lead.main.form" Type="Main" />
+      </Forms>
+    </Entity>
+    <Entity Name="contact" DisplayName="Contact">
+      <Forms>
+        <Form Name="contact.quick.create" Type="QuickCreate" />
+      </Forms>
+    </Entity>
+  </Entities>
+</ImportExportXml>

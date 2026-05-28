@@ -1,0 +1,13 @@
+timestamp,environment,component_type,component_name,operation,duration,success,severity,message,correlation_id
+2026-05-27T09:00:11Z,DEV,cloud_flow,flow_QuoteSync,Flow_Run_QuoteSync,7240,True,Warning,Flow with long loop over quote lines,CORR-S1-001
+2026-05-27T09:00:19Z,DEV,javascript,new_quote_form.js,JS_OnLoad_QuoteForm,1320,True,Info,Client script loaded,CORR-S1-002
+2026-05-27T09:00:33Z,DEV,plugin,contoso.SalesPlugins.PreValidateQuote,Plugin_PreValidateQuote,8160,False,Error,Timeout in pre-validation,CORR-S1-003
+2026-05-27T09:00:45Z,DEV,entity_form,quote.main.form,Form_Load_QuoteMain,2890,True,Info,Form render completed,CORR-S1-004
+2026-05-27T09:01:01Z,DEV,javascript,new_quote_form.js,JS_OnChange_TotalAmount,6040,True,Warning,Synchronous XHR detected,CORR-S1-005
+2026-05-27T09:01:20Z,DEV,cloud_flow,flow_QuoteSync,Flow_UpdateOpportunity,4910,True,Info,Flow step completed,CORR-S1-006
+2026-05-27T09:01:39Z,DEV,plugin,contoso.SalesPlugins.PostCreateQuote,Plugin_PostCreateQuote,5460,True,Warning,Plugin near threshold,CORR-S1-007
+2026-05-27T09:01:58Z,DEV,entity_form,opportunity.quick.create,Form_Save_OpportunityQuick,2120,True,Info,Quick create saved,CORR-S1-008
+2026-05-27T09:02:17Z,DEV,cloud_flow,flow_QuoteApproval,Flow_Approval_Request,9730,False,Error,Approval connector throttled,CORR-S1-009
+2026-05-27T09:02:31Z,DEV,javascript,new_ribbon_quote.js,JS_Command_SubmitQuote,4180,True,Info,Ribbon command executed,CORR-S1-010
+2026-05-27T09:02:54Z,DEV,plugin,contoso.SalesPlugins.PreOpOpportunity,Plugin_PreOpOpportunity,5820,True,Warning,Extra database call detected,CORR-S1-011
+2026-05-27T09:03:09Z,DEV,entity_form,account.main.form,Form_Load_AccountMain,3340,True,Info,Account form loaded,CORR-S1-012

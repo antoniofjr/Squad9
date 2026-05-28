@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml>
+  <SolutionManifest>
+    <UniqueName>contoso_sales_s3</UniqueName>
+    <Version>1.0.0.3</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>contoso</UniqueName>
+      <CustomizationPrefix>new</CustomizationPrefix>
+    </Publisher>
+  </SolutionManifest>
+  <RootComponents>
+    <RootComponent type="1" schemaName="account" />
+    <RootComponent type="61" schemaName="new_account_form" />
+    <RootComponent type="29" schemaName="flow_AccountTerritorySync" />
+    <RootComponent type="90" schemaName="contoso.SalesPlugins" />
+    <RootComponent type="1" schemaName="case" />
+  </RootComponents>
+  <WebResources>
+    <WebResource>
+      <Name>new_account_form.js</Name>
+      <DisplayName>Account Form Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+    <WebResource>
+      <Name>new_case_form.js</Name>
+      <DisplayName>Case Form Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+    <WebResource>
+      <Name>new_opportunity_forecast.js</Name>
+      <DisplayName>Opportunity Forecast Script</DisplayName>
+      <WebResourceType>3</WebResourceType>
+    </WebResource>
+  </WebResources>
+  <Workflows>
+    <Workflow>
+      <Name>flow_AccountTerritorySync</Name>
+      <Category>5</Category>
+      <PrimaryEntity>account</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+    <Workflow>
+      <Name>flow_CaseEscalation</Name>
+      <Category>5</Category>
+      <PrimaryEntity>incident</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+    <Workflow>
+      <Name>flow_OpportunityCloseTasks</Name>
+      <Category>5</Category>
+      <PrimaryEntity>opportunity</PrimaryEntity>
+      <Mode>0</Mode>
+      <StateCode>1</StateCode>
+    </Workflow>
+  </Workflows>
+  <PluginAssemblies>
+    <PluginAssembly>
+      <Name>contoso.SalesPlugins</Name>
+      <Version>1.0.0.3</Version>
+      <PluginTypes>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.PreAssignTerritory</TypeName>
+          <Steps>
+            <Step MessageName="Assign" PrimaryEntityName="account" Stage="20" Mode="0" />
+          </Steps>
+        </PluginType>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.PostCreateCase</TypeName>
+          <Steps>
+            <Step MessageName="Create" PrimaryEntityName="incident" Stage="40" Mode="0" />
+          </Steps>
+        </PluginType>
+        <PluginType>
+          <TypeName>contoso.SalesPlugins.AsyncOpportunityScoring</TypeName>
+          <Steps>
+            <Step MessageName="Update" PrimaryEntityName="opportunity" Stage="40" Mode="1" />
+          </Steps>
+        </PluginType>
+      </PluginTypes>
+    </PluginAssembly>
+  </PluginAssemblies>
+  <Entities>
+    <Entity Name="account" DisplayName="Account">
+      <Forms>
+        <Form Name="account.main.form" Type="Main" />
+      </Forms>
+    </Entity>
+    <Entity Name="case" DisplayName="Case">
+      <Forms>
+        <Form Name="case.main.form" Type="Main" />
+      </Forms>
+    </Entity>
+    <Entity Name="opportunity" DisplayName="Opportunity">
+      <Forms>
+        <Form Name="opportunity.main.form" Type="Main" />
+      </Forms>
+    </Entity>
+  </Entities>
+</ImportExportXml>

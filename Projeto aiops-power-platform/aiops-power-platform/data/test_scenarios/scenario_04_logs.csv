@@ -1,0 +1,13 @@
+timestamp,environment,component_type,component_name,operation,duration,success,severity,message,correlation_id
+2026-05-27T17:35:03Z,PROD,cloud_flow,flow_RevenueRollup,Flow_RollupRevenue,11840,False,Error,Parallel branches caused throttling,CORR-S4-001
+2026-05-27T17:35:19Z,PROD,plugin,contoso.SalesPlugins.PreUpdateAccount,Plugin_PreUpdateAccount,7720,True,Warning,Multiple retrieves per execution,CORR-S4-002
+2026-05-27T17:35:38Z,PROD,javascript,new_account_ribbon.js,JS_Command_RunRollup,6120,False,Error,Client command returned null object,CORR-S4-003
+2026-05-27T17:35:57Z,PROD,entity_form,account.main.form,Form_Save_AccountMain,4410,True,Info,Account save committed,CORR-S4-004
+2026-05-27T17:36:12Z,PROD,plugin,contoso.SalesPlugins.PostUpdateAccount,Plugin_PostUpdateAccount,8550,False,Error,Unhandled exception in post-image,CORR-S4-005
+2026-05-27T17:36:29Z,PROD,cloud_flow,flow_ComplianceSnapshot,Flow_CreateComplianceSnapshot,5260,True,Warning,Long-running table query,CORR-S4-006
+2026-05-27T17:36:45Z,PROD,entity_form,opportunity.main.form,Form_Load_OpportunityMain,2980,True,Info,Opportunity form load okay,CORR-S4-007
+2026-05-27T17:37:02Z,PROD,javascript,new_opportunity_command.js,JS_Command_CloseAsWon,7090,True,Warning,Extra fetch requests detected,CORR-S4-008
+2026-05-27T17:37:17Z,PROD,cloud_flow,flow_CloseWonOrchestration,Flow_CloseWonProcess,9470,False,Error,Subflow response timeout,CORR-S4-009
+2026-05-27T17:37:36Z,PROD,plugin,contoso.SalesPlugins.AsyncWonNotification,Plugin_AsyncWonNotification,3860,True,Info,Notification queued,CORR-S4-010
+2026-05-27T17:37:52Z,PROD,entity_form,quote.main.form,Form_Load_QuoteMain,2670,True,Info,Quote form rendered,CORR-S4-011
+2026-05-27T17:38:10Z,PROD,javascript,new_quote_rules.js,JS_OnChange_Discount,5330,True,Warning,Business rule script heavy,CORR-S4-012
