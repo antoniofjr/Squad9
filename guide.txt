@@ -1,0 +1,39 @@
+#instalar Requirements
+Step 1 - pip install -r requirements.txt
+
+#baixar o Modelo de IA
+Step 2 - python download_phi35_model.py
+
+OBS: dependendo da versão o nome da pasta dentro de "models" pode mudar. 
+então, copie o modelo de ia "model.onnx.data" para a phi3.5-mini-instruct-onnx
+
+#Rodar o projeto
+Step 3 - 
+python -m uvicorn main:app
+
+OBS: Caso ocorra algum problema, provavelmente com a versão mudando talvez precise trocar 
+
+params.input_ids = tokens
+generator.compute_logits() 
+
+para 
+
+generator.append_tokens(tokens)
+generator.generate_next_token()
+
+#Acessar FastApi
+http://127.0.0.1:8000/docs
+
+#No Fast API ir até
+GET /analyze
+
+
+#Escolher TryOut e Selecionar o Diretorio do arquivo desejado
+C:\caminho\aiops-power-platform\data\logs.csv
+
+
+#se quiser testar exemplo a parte do POST /analyze-custom use estes parâmetros em json.
+{
+  "text": "Analise falhas críticas",
+  "file_path": "C:\\Users\\nnild\\Desktop\\aiops-power-platform\\data\\logsErro.xml"
+}
