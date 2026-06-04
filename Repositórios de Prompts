@@ -1,0 +1,64 @@
+
+Prompt = "qual parâmetro posso estabelecer para criar um max lenght robusto e com uma boa taxa de resposta? já que quando eu utilizo a estrutura atual. ele falha em analisar e me retorna nada devido a quantidade de caracteres.
+
+{ "issues": [ "Possível problema encontrado: PowerPlatformErrorLog ", "Possível problema encontrado: Error ", "Possível problema encontrado: Code ConnectorAuthorizationFailed", "Possível problema encontrado: Message 
+Failed to authenticate connection for SharePoint connector.", "Possível problema encontrado: Details The access token has expired or is invalid." ], "risk": { "score": 10, "level": "CRÍTICO" }, "recommendations": [], "ai_analysis": "\n" }"
+
+
+Prompt: "com a verificação do ai_agent.py qual a melhor estrutura que você indica para resolver este erro diante do meu problema? o erro que recebo é em relação ao get da api com sistema. analise a estrutura do erro e me devolva o .py corretamente.
+
+INFO: 127.0.0.1:63765 - "GET /openapi.json HTTP/1.1" 200 OK INFO: 127.0.0.1:58374 - "GET /ask-ai?question=Ol%C3%A1%2C%20quem%20%C3%A9%20voc%C3%AA%3F HTTP/1.1" 500 Internal Server Error ERROR: Exception in ASGI application Traceback (most 
+recent call last): File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi result = await app( # type: ignore[func-returns-value] ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 56, in __call__ return await self.app(scope, receive, send) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\applications.py", line 1159, in __call__ await super().__call__(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python
+311\Lib\site-packages\starlette\applications.py", line 90, in __call__ await self.middleware_stack(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 186, 
+in __call__ raise exc File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__ await self.app(scope, receive, _send) File "C:\Users\nnild\AppData\Local\Programs\Python
+\Python311\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__ await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starl
+ette\_exception_handler.py", line 53, in wrapped_app raise exc File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app await app(scope, receive, sender) File 
+"C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__ await self.app(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\
+site-packages\starlette\routing.py", line 660, in __call__ await self.middleware_stack(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 680, in app await 
+route.handle(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\routing.py", line 276, in handle await self.app(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs
+\Python\Python311\Lib\site-packages\fastapi\routing.py", line 134, in app await wrap_app_handling_exceptions(app, request)(scope, receive, send) File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette
+\_exception_handler.py", line 53, in wrapped_app raise exc File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app await app(scope, receive, sender) 
+File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 120, in app response = await f(request) ^^^^^^^^^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages
+\fastapi\routing.py", line 674, in app raw_response = await run_endpoint_function( ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function 
+return await run_in_threadpool(dependant.call, **values) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool return 
+await anyio.to_thread.run_sync(func) ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync return await get_async_backend().run_sync_in_worker_thread
+( ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread return await future ^^^^^^^^^^^^ File "C:\Users\nnild
+\AppData\Local\Programs\Python\Python311\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run result = context.run(func, *args) ^^^^^^^^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\Desktop\aiops-power-platform\routes.py", line 40, in ask_ai response = 
+ask_phi(question) ^^^^^^^^^^^^^^^^^ File "C:\Users\nnild\Desktop\aiops-power-platform\agents\phi_agent.py", line 32, in ask_phi generator.compute_logits() onnxruntime_genai.onnxruntime_genai.OrtException: Got invalid dimensions for input: past_key_values.0.key 
+for the following indices index: 1 Got: 8 Expected: 32 Please fix either the inputs/outputs or the model. INFO: 127.0.0.1:58831 - "GET /analyze?file_path=C%3A%5CUsers%5Cnnild%5CDesktop%5Caiops-power-platform%5Cdata%5Clogs.csv HTTP/1.1" 200 OK"
+
+
+Prompt”Analise o texto a seguir, corrija o gramaticalmente e me entregue melhores
+abordagens para o assunto apresentado’’
+
+
+Prompt “ Visando todo desafio do nosso projeto para solucionar um debito técnico do
+low-code do power plataform da microsoft e criação de uma api para analisar logs de
+erros, qual a validação do nosso projeto em descobrir os pontos de dor, validação dos
+problemas? Nossos pontos foram validados coerentemente, os testes foram
+adequados as possíveis soluções que apresentamos?”
+
+
+Prompt’’No momento atual estou fazendo um trabalho e este foi um documento
+utilizado onde os parâmetros foram mais estabelecidos. O problema é que eu não
+tenho uma boa base das tecnologias e estudos apresentados. A minha pergunta
+central é como eu devo prosseguir com este problema levando em consideração o
+baixo entendimento do assunto? Quais as melhores fontes para o estudo destas
+tecnologias? e quais atividades eu posso fazer para aperfeiçoar o meu entendimento?’’
+
+
+Prompt’’Crie um "Documento de Engenharia de Requisitos e Backlog AI-First"
+detalhando um sistema de monitoramento inteligente para um ambiente Power
+Platform. O sistema deve utilizar um motor de IA baseado em Python REST e o
+modelo phi 3.5 mini para transicionar de um monitoramento reativo para uma operação
+preditiva e autônoma. O foco principal é a identificação de saturação de recursos e a
+sugestão de correções automáticas.’’
+
+
+Prompt”Você é um especialista em análise de logs da Power Platform. Identifique:-
+Problemas encontrados, - Possíveis causas, - Nível de risco (baixo, médio ou alto)
+Gere também recomendações para melhorar o sistema. Seja direto, técnico e objetivo.
+Não invente informações que não estejam nos dados.
+
